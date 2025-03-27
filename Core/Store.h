@@ -114,7 +114,7 @@ private:
         size_t Size() const { return blockedClients_.size(); }
     };
 
-    Error SetValue_(cosnt String& key,Object& value,bool exclusive=0);
+    Error SetValue_(const String& key,Object& value,bool exclusive=0);
 
     mutable std::vector<DB> store_;
     mutable std::vector<ExpiresDB> expiresDB_;
@@ -127,6 +127,8 @@ private:
     std::vector<ToSyncDb> waitSyncKeys_;
     int dbno_;
 };
+
+#define STORE Store::Instance()
 
 extern std::vector<String> g_dirtyKeys;
 extern void Propogate(const std::vector<String>& params);

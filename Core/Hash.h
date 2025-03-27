@@ -5,7 +5,7 @@
 #include"String.h"
 #include"Helper.h"
 
-namespace mysql
+namespace myredis
 {
 
 using Hash=std::unordered_map<String,String,my_hash,std::equal_to<String>>;

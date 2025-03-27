@@ -150,7 +150,10 @@ bool LoadRedisConfig(const char* cfgFile,Config& cfg)
         cfg.masterPort=static_cast<unsigned short>(std::stoi(master[1]));
     }
     cfg.masterAuth=parser.GetData<String>("masterAuth");
+    cfg.modules=parser.GetData<String>("loadmodule");
+    cfg.includeFile=parser.GetData<String>("include");
 
+    cfg.maxMemory=parser.GetData<uint64_t>("max")
     
     
 }
